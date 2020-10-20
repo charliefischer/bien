@@ -13,9 +13,23 @@
     </div>
 <% end %>
 
+<% if @review.cuisine.present? %>
+    <div class="cuisine">
+        Cuisine: <%= @review.cuisine %>
+    </div>
+<% end %>
+
 <div class="body">
     <%= simple_format @review.body %>
 </div>
+
+<% if @review.price.present? %>
+    <div class="price">
+        Price: <%= @review.price %>
+    </div>
+<% end %>
+
+
 
 <div class="actions">
     <%= link_to "Edit this review", edit_review_path(@review) %>
